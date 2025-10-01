@@ -1,0 +1,123 @@
+Pasted-PROMPT-Finish-8-pages-Build-polish-deploy-a-modern-Several-Sustain-site-on-Replit-Context--1759314806543_1759314806545.txt
+PROMPT — Finish 8 pages → Build, polish & deploy a modern Several Sustain site on Replit
+
+Context / starting point
+
+Owner / brand: Several Sustain (I will attach logo files: SVG + PNG).
+
+Starting files (attached):
+index_complete_responsive.html
+web-design-enhanced-ui.html
+pcb-design-final.html
+firmware-development.html
+hardware-development.html
+app-development-services-best-ui.html
+dpu-amcu-milk-collection-system (1).html
+milk-analyzers.html
+(Developer: use these files as the canonical content source — do not delete; refactor into components/pages.)
+
+
+Primary objective
+
+Convert the 8 static HTML pages into a single componentized, maintainable site and bring them to 100% production quality, then create the additional pages and features listed below. Deliver a modern, premium, accessible, SEO-friendly site fully deployed on Replit with a small CMS for content edits.
+
+
+
+---
+
+Tech stack (recommended — developer may propose alternates with reasons)
+
+Framework: Next.js (React) + TypeScript — for componentization + SEO prerendering. If team prefers lighter, React + Vite + TS is acceptable.
+
+Styling: Tailwind CSS (with design tokens) + one global styles.css for critical overrides. Provide a Tailwind config with color tokens.
+
+Icons: lucide-react or Heroicons (consistent icon set).
+
+Images: Optimize to WebP/AVIF; serve responsive srcset.
+
+CMS: Lightweight headless or Git-based CMS. Prefer Sanity / Netlify CMS / TinaCMS depending on Replit compatibility. If client prefers pure Git edits, enable Markdown-based content editing.
+
+Forms: Serverless form handler (Replit backend), or integrate with Google Sheets via API / sendgrid for email, plus anti-spam (honeypot + optional reCAPTCHA).
+
+Testing / CI: Git-based repo in Replit (or GitHub mirror). Run linting (ESLint + Prettier), TypeScript type checks.
+
+Deployment: Deploy on Replit (provide run command). Provide DNS instructions for severalsustain.in.
+
+
+> NOTE: If the team proposes a different stack (e.g., Eleventy/Static or Next.js + Vercel), include a short justification and an updated handover plan.
+
+
+
+
+---
+
+Overall UX & visual design direction (must be applied site-wide)
+
+Visual feel: polished, modern, trustable — clean grids, generous whitespace, subtle depth (soft shadows), minimal color palette with an accent --primary (use existing green as accent). Use monochrome greys for body copy and a single accent for CTAs.
+
+Typography: Inter for UI with clear scale (H1 48–56px desktop, H2 32–40px, body 16px). Use variable fonts where possible and font-display: swap. Preload key font.
+
+Spacing system: 4/8/16 baseline grid. Implement spacing tokens in Tailwind config.
+
+Microinteractions: subtle hover states, animated CTA underlines, soft entrance transitions for hero & CTA (no flashy animations).
+
+Imagery: professional product photos, contextual shots (device in lab/field), and device UI screenshots. Use consistent color grading and crop style. Provide placeholders if assets missing.
+
+Dark/light variants: ensure components look good in both (optional).
+
+Accessible contrast: all actionable colors must pass WCAG AA.
+
+
+
+---
+
+Component & code requirements
+
+Create a design system folder (/components/ui) with:
+
+Header (shared component)
+
+Footer (shared component)
+
+Button (primary/secondary/ghost)
+
+Card (product/case study)
+
+Form components (Input, Select, Textarea, FileUpload, Checkbox)
+
+Hero block, CTA block, Feature grid, FAQ accordion (accessible), Modal, Toast.
+
+
+Use one header and one footer component across all pages. Header should include desktop nav + mobile drawer with focus trap. Footer includes sitemap, contact, social, legal links, and newsletter signup.
+
+Components must be well-documented (JSDoc or README within /components) and reusable.
+
+Global state minimal — prefer props and local state. For forms, use React Hook Form + Zod for schema validation.
+
+
+
+---
+
+Specific tasks — finish & polish the 8 existing pages
+
+For each of the 8 provided HTML files, do the following as priority work:
+
+1. Refactor: Convert raw HTML into Next.js pages (or equivalent) and replace duplicated header/footer markup by the shared components. Keep original page copy & schema; port into componentized JSX/TSX with semantic HTML.
+
+
+2. Global CSS: Remove per-page :root duplication; consolidate variables into Tailwind theme tokens + :root fallback.
+
+
+3. Responsive fixes: Audit and fix all mobile breakpoints (320, 375, 414, 768, 1024, 1366, 1920). Ensure no overflow.
+
+
+4. Mobile menu: implement accessible mobile menu with keyboard support and aria attributes.
+
+
+5. Footer: unify and include contact, quick links, social icons, newsletter, small site map, and privacy/terms links.
+
+
+6. Forms: Replace any inline contact forms with unified Contact & Quote forms (shared component) with client-side validation & graceful server submission handling (show toast success/failure).
+
+
+7. Images:...
